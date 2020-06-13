@@ -160,3 +160,5 @@ y축 = column
 
   
 
+##### 테이블 분해,병합 를 좀더 알고싶으면 database modeling,database normalization(정규화) 를 검색할것
+
