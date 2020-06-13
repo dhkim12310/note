@@ -124,4 +124,39 @@ y축 = column
 
 ##### JOIN 명령어의 종류를 알아보자
 
-- 
+[JOIN밴다이어그램](www.sql-joins.leopard.in.ua)
+
+- **LEFT JOIN** (중요)
+
+  `SELECT * FROM tableA LEFT JOIN tableB ON A.key = B.key;`
+
+  `SELECT * FROM tableA LEFT JOIN tableB ON A.key = B.key LEFT JOIN tableC ON  tableB.key = tableC.key;`
+
+  `SELECT key1,key2,key3 AS 별명 FROM tableA LEFT JOIN tableB ON A.key = B.key LEFT JOIN tableC ON  tableB.key = tableC.key;`
+
+  `SELECT key1,key2,key3 AS 별명 FROM tableA LEFT JOIN tableB ON A.key = B.key LEFT JOIN tableC ON  tableB.key = tableC.key WHERE tableA.key =1;`
+
+  
+
+- **INNER JOIN**
+
+  양쪽다 존재하는 결과물만 출력 (NULL 값을 가져오지 않음)
+
+  `SELECT * FROM tableA INNER JOIN tableB ON A.key = B.key;`
+
+  `SELECT * FROM tableA INNER JOIN tableB ON A.key = B.key INNER JOIN tableC ON  tableB.key = tableC.key;`
+
+- **FULL OUTER JOIN**
+
+  오른쪽에만 있는 값, 왼쪽에만 있는값 이 테이블 기준으로 밑에 결과값이 추가로 출력됨
+
+  `(SELECT * FROM tableA LEFT JOIN tableB ON A.key = B.key;) UNION (SELECT * FROM tableA LIGHT JOIN tableB ON A.key = B.key;)`
+
+- **EXCLUSIVE JOIN**
+
+  tableA 에만 있는 값을 출력
+
+  `SELECT * FROM tableA LEFT JOIN tableB ON tableA.key = tableB.key WHERE  tableB.key is NULL`
+
+  
+
